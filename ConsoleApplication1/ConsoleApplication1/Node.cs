@@ -8,9 +8,9 @@ namespace ConsoleApplication1
 {
     class Node
     {
-        int count = 0; 
-        string label;
-        List<Edge> edges;
+        public int count = 0;
+        public String label;
+        public List<Edge> edges;
 
         public Node(string label)
         {
@@ -21,8 +21,14 @@ namespace ConsoleApplication1
         public Node RandomTravel()
         {
             Random r = new Random();
-            return edges[Math.Round((double)(r.Next(edges.Count()))];
+            return edges[r.Next(edges.Count())].destination;
 
         }
+
+        public override string ToString()
+        {
+            return label + ": " + count;
+        }
+
     }
 }
